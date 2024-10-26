@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="piano">
+        <div class="whitekey" onclick="playSound()"></div>
+        <div class="blackkey" onclick=""></div>
+        <div class="whitekey" onclick=""></div>
+        <div class="blackkey" onclick=""></div>
+        <div class="whitekey" onclick=""></div>
+        <div class="blackkey" onclick=""></div>
+        <div class="whitekey" onclick=""></div>
+        <div class="blackkey" onclick=""></div>
+    </div>
+</body>
+<script>
+    function playSound(){
+        var audio = new Audio('Sounds/mouse-click.mp3');
+        audio.play();
+    }
+</script>
+</html>
