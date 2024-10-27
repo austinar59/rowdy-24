@@ -1,47 +1,54 @@
-# Piano Web App 
-This project is a simple web-based piano that allows users to play notes by clicking keys on a virtual keyboard. Each key triggers an API call to a Java RESTful Spring Boot server, which processes the request and plays the corresponding audio file.
+## RowdyKeys - Back to the Future Sound Visualizer 
+RowdyKeys is a Java-based project that visualizes piano key sounds using a Java Swing GUI and a Spring Boot REST API. It includes a sound visualizer (BackToTheFutureVisualizer) that animates a vertical progress bar for each note when the associated sound is triggered. The app is designed to work cross-platform (Linux and Windows) and loads sound files dynamically from a resources folder.
 
-# Project Overview
-This application is designed to simulate a virtual piano using a web server interface. When a piano key is clicked, it sends a signal to an API built with Java Spring Boot. The API then plays an audio file corresponding to the note selected, providing a musical experience through a simple web interface.
+# Project Structure
++ BackToTheFutureVisualizer (GUI): A Java Swing-based sound visualizer that polls the REST API, animating a   
+  progress bar for each note.
++ Controller (REST API): A Spring Boot API handling data exchange and sound playback triggers.
++ Parser: Extracts note and instrument information from the API data to correctly match and play sound files.
++ PlayClip: Loads and plays audio files from resources using javax.sound.sampled classes.
++ HTML/JS Frontend: Provides a basic web UI for selecting and triggering notes.
 
 # Features
-+ Interactive web-based piano keyboard
-+ API integration using Java Spring Boot
-+ Plays corresponding audio files for each note
-+ Cross-platform compatibility
-+ GUI display visualizer for audio
++ Sound Visualizer: Displays a GUI with interactive vertical progress bars representing notes.
++ Cross-platform: Designed for both Linux and Windows using Java Swing.
++ Dynamic Sound Loading: Fetches and plays audio files from a resources folder (rowdyKeys).
++ REST API Integration: Uses Spring Boot for handling data transmission and sound-triggering commands from the frontend.
 
-# Technologies Used
-+ Frontend: HTML, CSS, JavaScript
-+ Backend: Java REST API with Spring Boot
-+ Audio Processing: Server-side handling of audio files
+# Setup
+Prerequisites
+1 Java Development Kit (JDK) - Java 11 or higher
+2 Apache Maven - For building the project
+3 Spring Boot - Dependency included in the project
+4 Audio Files - Place .wav files in src/main/resources/rowdyKeys.
 
-# Getting Started
-+ Prerequisites
-+ Java 11+ installed
-+ Dependencies for Spring Boot
+# Installation Steps
+1. Clone the repository:
+   ```
+    git clone
+   ```
+2. Build the project:
+   ```
+    mvn clean install
+   ```
+3. Run the Application:
++ Start REST API:
+   ```
+   mvn spring-boot:run
+   ```
++ Start the GUI Visualizer:
+  ```
+  java -cp target/RowdyKeys-1.0-SNAPSHOT.jar com.example.RestApi.BackToTheFutureVisualizer
+  ```
 
-# Installation
-1. Clone this repository:
-```
-git clone 
-```
-2. Set up and start the API:
-  + Navigate to the API directory:
-    ```
-    cd piano-web-app/api
-    ```
- + Build and run the API using Maven or Gradle:
-   ```
-    mvn spring-boot:run
-   ```
-3. Start the Web Server
-   ```
-   cd piano-web-app/frontend
-   npm start
-   ```
 # Usage
-1. Open the web app in your browser (e.g., http://localhost:3000 if using a local server).
-2. Click on the piano keys to send API requests and hear the corresponding notes.
+Running the Visualizer
+1. Launch the Swing GUI by running BackToTheFutureVisualizer.
+2. The GUI will poll the REST API every 500ms for new note data.
+3. Progress bars for each note (C, D, E, etc.) will animate whenever the API sends a signal for a new note.
+4. Close the visualizer window to stop the application.
 
-Each key press triggers an API call to the Java Spring Boot server, which plays an audio file representing the selected note.
+Frontend Interaction
+1. Open index.html in a browser to access the web interface.
+2. Select a note on the virtual piano, and it sends a POST request to /sendData on the server.
+3. The server plays the audio clip and triggers the GUI to animate the corresponding note bar.
