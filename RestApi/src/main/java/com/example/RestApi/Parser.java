@@ -12,4 +12,9 @@ public class Parser {
 
         return stringArr[1] + "_" + stringArr[0] + ".wav";
     }
+    public static String moreParse(String data){
+        String[] note = data.split("_");
+        return note[0];
+    }
 }
+

@@ -9,9 +9,9 @@
 			'instr3' : 'v'
 		}
 		var names = {
-			'🎹' : "Synth",
-			'guitar' : 'Guitar',
-			'v' : 'V'
+			'🎹' : "synth",
+			'guitar' : 'guitar',
+			'v' : 'v'
 		}
         var currentInst = '🎹';
 		function switchInstrument(input, button)
