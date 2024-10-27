@@ -3,6 +3,7 @@ package com.example.RestApi;
 import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class PlayClip implements Runnable {
     private String filename;
@@ -13,15 +14,15 @@ public class PlayClip implements Runnable {
 
     @Override
     public void run() {
-        // List<Clip> clips = new ArrayList<>();
         try {
-            File soundFile = new File(filename);
-            if (!soundFile.exists()) {
-                System.out.println("File not found: " + filename);
+            // Load the file from resources
+            URL soundFileUrl = getClass().getClassLoader().getResource("rowdyKeys/" + filename);
+            if (soundFileUrl == null) {
+                System.out.println("File not found in resources: " + filename);
                 return;
             }
 
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundFile);
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundFileUrl);
             AudioFormat format = audioStream.getFormat();
             DataLine.Info info = new DataLine.Info(Clip.class, format);
 
@@ -29,7 +30,7 @@ public class PlayClip implements Runnable {
             audioClip.open(audioStream);
 
             audioClip.start();
-            Thread.sleep(audioClip.getMicrosecondLength() / 1);
+            Thread.sleep(audioClip.getMicrosecondLength() / 1000);
             audioClip.close();
             audioStream.close();
 

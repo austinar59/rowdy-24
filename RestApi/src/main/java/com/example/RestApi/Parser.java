@@ -1,6 +1,8 @@
 package com.example.RestApi;
 
 
+import java.io.File;
+
 public class Parser {
     public static void parserMain(String data) {
 
@@ -13,7 +15,7 @@ public class Parser {
 
         for (int i = 0; i < strings.length(); i += 2) {
             String specFile = stringArr[1] + "_" + stringArr[0] + ".wav";
-            String filename = ("..\\..\\..\\..\\..\\..\\resources\\rowdyKeys\\" + specFile);
+            String filename = specFile; // Only pass "C_synth.wav" etc.
             System.out.println("Playing: " + filename);
 
             PlayClip playClip = new PlayClip(filename);
