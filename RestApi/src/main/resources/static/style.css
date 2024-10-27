@@ -105,7 +105,7 @@ body {
 	width: 5px;
 	height: 15px;
 	margin-left: 5px;
-	background: url('../img/right-arrow.png');
+	background: url('./img/right-arrow.png');
 	display: inline;
 	background-size: 5px 15px;
 }
@@ -113,7 +113,7 @@ body {
 	width: 5px;
 	height: 15px;
 	margin-left: 5px;
-	background: url('../img/left-arrow.png');
+	background: url('./img/left-arrow.png');
 	display: inline;
 	background-size: 5px 15px;
 }
