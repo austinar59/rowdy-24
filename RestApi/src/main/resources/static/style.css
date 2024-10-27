@@ -2,6 +2,7 @@ body {
 	margin: 0;
     font-family: Arial, sans-serif;
 	background: url('./img/bg.jpg');
+	background-size: cover;
 }
 /* store our gradient values */
 :root {
@@ -22,6 +23,13 @@ body {
 	height: 100%;
 	font-size: 16pt;
 	padding: 25px;
+}
+#logo {
+	background: url('./img/logo.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 25px;
+	min-width: 250px;
 }
 /* for instruments on the selection panel */
 .instr {
