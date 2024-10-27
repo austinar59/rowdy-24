@@ -17,7 +17,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 	flex-direction: column;
-	background: rgba(255,255,255,0.8);
+	background: rgba(100,100,100,0.8);
 }
 .instr, #logo {
 	height: 100%;
@@ -51,7 +51,7 @@ body {
 	color: white;
 	min-height: 5vh;
 	background: #000;
-	box-shadow: 0px 2px 8px black;
+	box-shadow: 0px 2px 8px #c40;
 	max-width: 100%;
 	overflow: hidden;
 	position: relative;
@@ -137,10 +137,10 @@ body {
 	animation: electric 0.5s infinite linear alternate;
 }
 h1.welcome {
-	color: #c40;
+	color: #f60;
 }
 h2.welcome {
-	color: #c80;
+	color: #eda900;
 }
 @Keyframes electric {
 	from{
