@@ -22,6 +22,25 @@ This application is designed to simulate a virtual piano using a web server inte
 
 # Installation
 1. Clone this repository:
-+ ```console
-  git clone https://github.com/yourusername/piano-web-app.git
-  ```
+```
+git clone 
+```
+2. Set up and start the API:
+  + Navigate to the API directory:
+    ```
+    cd piano-web-app/api
+    ```
+ + Build and run the API using Maven or Gradle:
+   ```
+    mvn spring-boot:run
+   ```
+3. Start the Web Server
+   ```
+   cd piano-web-app/frontend
+   npm start
+   ```
+# Usage
+1. Open the web app in your browser (e.g., http://localhost:3000 if using a local server).
+2. Click on the piano keys to send API requests and hear the corresponding notes.
+
+Each key press triggers an API call to the Java Spring Boot server, which plays an audio file representing the selected note.
