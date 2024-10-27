@@ -75,3 +75,8 @@ body {
 .blackkey:active {
     background-color: #f000;
 }
+.zwsp {
+	/* this class allows for the amazing solution to emojis and texts being different line heights:
+	have a nothing character that's bigger than either of them! */
+	font-size: 20pt;
+}
