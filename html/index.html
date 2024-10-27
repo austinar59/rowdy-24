@@ -26,7 +26,7 @@
 				currentInst = x;
 				instrList[instr1] = x;
 				instrList[input] = y;
-				document.getElementById("instr1").innerHTML = ZWSP_TXT + instrList[instr1];
+				document.getElementById("instr1").innerHTML = ZWSP_TXT + instrList[instr1] + ">";
 				document.getElementById(input).innerHTML = ZWSP_TXT + instrList[input];
 		}
 		function listChange(button){
@@ -49,7 +49,7 @@
 <body>
 	<div id="header">
 		<div id="logo">
-			Placeholder
+			RowdyHacks
 		</div>
 		<div class="select">
 			<div id="instr1" class="instr selected" onmousedown="listChange()"><span class="zwsp">&#8288;</span>🎹</div>
