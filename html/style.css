@@ -15,6 +15,9 @@ body {
 	font-size: 16pt;
 	padding: 25px;
 }
+.instr {
+	background: #c40;
+}
 .hidden {
 	display: none;
 }
@@ -31,7 +34,7 @@ body {
 	align-items: center;
 	justify-content: center;
 }
-.selected {
+.instr .selected {
 	background: #c90;
 }
 .selected:hover {

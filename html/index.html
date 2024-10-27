@@ -15,8 +15,6 @@
         var currentInst = '🎹';
 		function switchInstrument(input, button)
 		{
-			if(button = 0)
-			{
 				let x = instrList[input];
 				let y = currentInst;
 				currentInst = x;
@@ -24,10 +22,8 @@
 				instrList[input] = y;
 				document.getElementById("instr1").innerHTML = instrList[instr1];
 				document.getElementById(input).innerHTML = instrList[input];
-			}
 		}
 		function listChange(button){
-			if(button = 0) {
 				switch(open)
 				{
 					case true:
@@ -41,7 +37,6 @@
 						open = true;
 						break;
 				}
-			}
 		}
     </script>
 </head>
@@ -51,7 +46,7 @@
 			Placeholder
 		</div>
 		<div class="select">
-			<div id="instr1" class="instr selected" onmousedown="listChange(this.button)">🎹</div>
+			<div id="instr1" class="instr selected" onmousedown="listChange()">🎹</div>
 			<div id="instr2" class="instr hidden" onmousedown="switchInstrument('instr2')">guitar</div>
 			<div id="instr3" class="instr hidden" onmousedown="switchInstrument('instr3')">v</div>
 		</div>
