@@ -35,7 +35,6 @@
 				'k' : 'C2'
 			}
 			let x = keyDict[k.key];
-			document.getElementById("key" + k.toUpperCase());
 			callJava(currentInst, x);
 		}
 		function switchInstrument(input, button)
