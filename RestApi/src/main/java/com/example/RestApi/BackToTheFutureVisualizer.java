@@ -1,3 +1,5 @@
+package com.example.RestApi;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.Timer;
 
-public class BackToFutureVisualizer extends JFrame {
+public class BackToTheFutureVisualizer extends JFrame {
 
     private static final int ANIMATION_DELAY = 4;
     private static final int POLL_INTERVAL = 500;
@@ -19,7 +21,7 @@ public class BackToFutureVisualizer extends JFrame {
     private final Map<String, JProgressBar> noteBars;
     private int lastNotesCount = 0;
 
-    public BackToFutureVisualizer() {
+    public BackToTheFutureVisualizer() {
         setTitle("Back to the Future Sound Visualizer");
         setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -142,7 +144,7 @@ public class BackToFutureVisualizer extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            BackToFutureVisualizer app = new BackToFutureVisualizer();
+            BackToTheFutureVisualizer app = new BackToTheFutureVisualizer();
             app.setVisible(true);
 
             JProgressBar testProgressBar = app.noteBars.get("c");
