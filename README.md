@@ -25,7 +25,7 @@ Prerequisites
 # Installation Steps
 1. Clone the repository:
    ```
-    git clone
+    git clone https://github.com/austinar59/rowdy-24.git
    ```
 2. Build the project:
    ```
