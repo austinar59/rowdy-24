@@ -25,19 +25,20 @@
 	</div>
 	<div id="bodycontainer">
 		<div class="keyboard">
-			<div class="whitekey" onclick="callJava(names['currentInst'], 'C')"></div>
-			<div class="blackkey" onclick="callJava(names['currentInst'], 'D')"></div>
-			<div class="whitekey" onclick="callJava(names['currentInst'], 'E')"></div>
-			<div class="blackkey" onclick="callJava(names['currentInst'], 'F')"></div>
-			<div class="whitekey" onclick="callJava(names['currentInst'], 'G')"></div>
-			<div class="blackkey" onclick="callJava(names['currentInst'], 'A')"></div>
-			<div class="whitekey" onclick="callJava(names['currentInst'], 'B')"></div>
-			<div class="blackkey" onclick="callJava(names['currentInst'], 'C2')"></div>
+			<div class="whitekey" onclick="callJava(names[currentInst], 'C')"></div>
+			<div class="blackkey" onclick="callJava(names[currentInst], 'D')"></div>
+			<div class="whitekey" onclick="callJava(names[currentInst], 'E')"></div>
+			<div class="blackkey" onclick="callJava(names[currentInst], 'F')"></div>
+			<div class="whitekey" onclick="callJava(names[currentInst], 'G')"></div>
+			<div class="blackkey" onclick="callJava(names[currentInst], 'A')"></div>
+			<div class="whitekey" onclick="callJava(names[currentInst], 'B')"></div>
+			<div class="blackkey" onclick="callJava(names[currentInst], 'C2')"></div>
 		</div>
 	</div>
 </body>
 <script>
     function callJava(instrument, note) {
+		//console.log(instrument, note);
         const message = `${instrument}-${note}`;  // Format as "Instrument-Note"
 
         fetch('/sendData', {
