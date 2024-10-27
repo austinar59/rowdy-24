@@ -15,6 +15,7 @@ body {
 	font-size: 16pt;
 	padding: 25px;
 }
+/* for instruments on the selection panel */
 .instr {
 	background: #c40;
 }
@@ -29,6 +30,7 @@ body {
 	min-height: 5vh;
 	background: #000;
 }
+/* this refers to the selection menu container */
 .select {
 	display: flex;
 	align-items: center;
@@ -36,13 +38,22 @@ body {
 }
 .instr.selected {
 	background: #c90;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .select:hover {
 	cursor: pointer;
 }
+/*.selected:after {
+	content:"";
+	display: inline-block;
+	background: url('../img/right-arrow.png');
+}*/
 .keyboard {
     display: flex;
 }
+/* while these are no longer black and white keys, white is (2n+1)th key and black is (2n)th key starting at 1*/
 .whitekey {
     width: 60px;
     height: 200px;
@@ -79,4 +90,13 @@ body {
 	/* this class allows for the amazing solution to emojis and texts being different line heights:
 	have a nothing character that's bigger than either of them! */
 	font-size: 20pt;
+}
+/* provides a right arrow image for the "selected" element; i think this looks rather nicer than the previous ">" character */
+.right-arrow {
+	width: 5px;
+	height: 15px;
+	margin-left: 5px;
+	background: url('../img/right-arrow.png');
+	display: inline;
+	background-size: 5px 15px;
 }
