@@ -22,6 +22,6 @@ This application is designed to simulate a virtual piano using a web server inte
 
 # Installation
 1. Clone this repository:
-```console
-git clone https://github.com/yourusername/piano-web-app.git
-```
++ ```console
+  git clone https://github.com/yourusername/piano-web-app.git
+  ```
