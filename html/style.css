@@ -31,6 +31,9 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+.selected:hover {
+	cursor: pointer;
+}
 .keyboard {
     display: flex;
 }
