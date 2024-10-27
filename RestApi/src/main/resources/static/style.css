@@ -1,6 +1,7 @@
 body {
 	margin: 0;
     font-family: Arial, sans-serif;
+	background: url('./img/bg.jpg');
 }
 /* store our gradient values */
 :root {
@@ -14,6 +15,8 @@ body {
     height: 95vh;
     margin: 0;
     font-family: Arial, sans-serif;
+	flex-direction: column;
+	background: rgba(255,255,255,0.8);
 }
 .instr, #logo {
 	height: 100%;
@@ -31,6 +34,7 @@ body {
 	opacity: 0;
 	padding-left: 0;
 	padding-right: 0;
+	margin: 0;
 }
 #header {
 	display: flex;
@@ -40,6 +44,10 @@ body {
 	min-height: 5vh;
 	background: #000;
 	box-shadow: 0px 2px 8px black;
+	max-width: 100%;
+	overflow: hidden;
+	position: relative;
+	background-size: cover;
 }
 /* this refers to the selection menu container */
 .select {
@@ -64,6 +72,8 @@ body {
 }*/
 .keyboard {
     display: flex;
+	justify-content: center;
+    align-items: center;
 }
 /* while these are no longer black and white keys, white is (2n+1)th key and black is (2n)th key starting at 1*/
 .whitekey {
@@ -117,6 +127,12 @@ body {
 }
 .blackkey:hover, .whitekey:hover {
 	animation: electric 0.5s infinite linear alternate;
+}
+h1.welcome {
+	color: #c40;
+}
+h2.welcome {
+	color: #c80;
 }
 @Keyframes electric {
 	from{
