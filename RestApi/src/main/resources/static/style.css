@@ -24,9 +24,13 @@ body {
 .instr {
 	background: var(--grad-orange);
 	background-color: #c40;
+	transition: width 1s, opacity 1s, padding 1s;
 }
 .hidden {
-	display: none;
+	width: 0;
+	opacity: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 #header {
 	display: flex;
