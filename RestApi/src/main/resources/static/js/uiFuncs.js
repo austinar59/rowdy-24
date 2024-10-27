@@ -9,7 +9,7 @@
 			'instr3' : 'v'
 		}
 		var names = {
-			'🎹' : "Piano",
+			'🎹' : "Synth",
 			'guitar' : 'Guitar',
 			'v' : 'V'
 		}
