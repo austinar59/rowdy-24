@@ -9,6 +9,7 @@ This application is designed to simulate a virtual piano using a web server inte
 + API integration using Java Spring Boot
 + Plays corresponding audio files for each note
 + Cross-platform compatibility
++ GUI display visualizer for audio
 
 # Technologies Used
 + Frontend: HTML, CSS, JavaScript
