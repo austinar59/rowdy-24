@@ -8,20 +8,32 @@
 </head>
 <body>
     <div class="piano">
-        <div class="whitekey" onclick="playSound()"></div>
-        <div class="blackkey" onclick=""></div>
-        <div class="whitekey" onclick=""></div>
-        <div class="blackkey" onclick=""></div>
-        <div class="whitekey" onclick=""></div>
-        <div class="blackkey" onclick=""></div>
-        <div class="whitekey" onclick=""></div>
-        <div class="blackkey" onclick=""></div>
+        <div class="whitekey" onclick="callJava('Piano', '1')"></div>
+        <div class="blackkey" onclick="callJava('Piano', '2')"></div>
+        <div class="whitekey" onclick="callJava('Piano', '3')"></div>
+        <div class="blackkey" onclick="callJava('Piano', '4')"></div>
+        <div class="whitekey" onclick="callJava('Piano', '5')"></div>
+        <div class="blackkey" onclick="callJava('Piano', '6')"></div>
+        <div class="whitekey" onclick="callJava('Piano', '7')"></div>
+        <div class="blackkey" onclick="callJava('Piano', '8')"></div>
     </div>
 </body>
 <script>
-    function playSound(){
-        var audio = new Audio('Sounds/mouse-click.mp3');
-        audio.play();
+    function callJava(instrument, note) {
+        const message = `${instrument}-${note}`;  // Format as "Instrument-Note"
+
+        fetch('/sendData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message })  // Send single formatted string
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data); // Display response from API
+        })
+        .catch(error => console.error('Error:', error));
     }
 </script>
 </html>
