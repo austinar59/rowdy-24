@@ -9,12 +9,16 @@ public class Controller {
     @PostMapping("/sendData")
     public @ResponseBody String recieveData(@RequestBody String data) {
 
-        // essentially our main
-        Parser.parserMain(data);
-        System.out.println("Recieved message: "+ data);
+        String filename = Parser.parserMain(data);
+        System.out.println("Playing: " + filename);
 
-
+        callPLayClip(filename);
         return "Data recieved in Java" + data;
+    }
+    public void callPLayClip(String filename){
+        PlayClip playClip = new PlayClip(filename);
+        Thread thread = new Thread(playClip);
+        thread.start();
     }
 
 }

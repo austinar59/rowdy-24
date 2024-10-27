@@ -1,11 +1,8 @@
 package com.example.RestApi;
 
 
-import java.io.File;
-
 public class Parser {
-    public static void parserMain(String data) {
-
+    public static String parserMain(String data) {
 
         // parse data -> {"message":"Piano-1"}
         int dataLen = data.length();
@@ -13,16 +10,6 @@ public class Parser {
         String strings = data.substring(12, dataEnd);
         String[] stringArr = strings.split("-");
 
-        for (int i = 0; i < strings.length(); i += 2) {
-            String specFile = stringArr[1] + "_" + stringArr[0] + ".wav";
-            String filename = specFile; // Only pass "C_synth.wav" etc.
-            System.out.println("Playing: " + filename);
-
-            PlayClip playClip = new PlayClip(filename);
-
-            Thread thread = new Thread(playClip);
-            thread.start();
-        }
+        return stringArr[1] + "_" + stringArr[0] + ".wav";
     }
-
 }
