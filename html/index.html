@@ -13,29 +13,34 @@
 			'instr3' : 'v'
 		}
         var currentInst = '🎹';
-		function switchInstrument(input)
+		function switchInstrument(input, button)
 		{
-			let x = instrList[input];
-			let y = currentInst;
-			currentInst = x;
-			instrList[instr1] = x;
-			instrList[input] = y;
-			document.getElementById("instr1").innerHTML = instrList[instr1];
-			document.getElementById(input).innerHTML = instrList[input];
-		}
-		function listChange(){
-			switch(open)
+			if(button = 0)
 			{
-				case true:
-					document.getElementById("instr2").className = "instr hidden";
-					document.getElementById("instr3").className = "instr hidden";
-					open = false;
-					break;
-				case false:
-					document.getElementById("instr2").className = "instr";
-					document.getElementById("instr3").className = "instr";
-					open = true;
-					break;
+				let x = instrList[input];
+				let y = currentInst;
+				currentInst = x;
+				instrList[instr1] = x;
+				instrList[input] = y;
+				document.getElementById("instr1").innerHTML = instrList[instr1];
+				document.getElementById(input).innerHTML = instrList[input];
+			}
+		}
+		function listChange(button){
+			if(button = 0) {
+				switch(open)
+				{
+					case true:
+						document.getElementById("instr2").className = "instr hidden";
+						document.getElementById("instr3").className = "instr hidden";
+						open = false;
+						break;
+					case false:
+						document.getElementById("instr2").className = "instr";
+						document.getElementById("instr3").className = "instr";
+						open = true;
+						break;
+				}
 			}
 		}
     </script>
@@ -46,7 +51,7 @@
 			Placeholder
 		</div>
 		<div class="select">
-			<div id="instr1" class="instr selected" onmousedown="listChange()">🎹</div>
+			<div id="instr1" class="instr selected" onmousedown="listChange(this.button)">🎹</div>
 			<div id="instr2" class="instr hidden" onmousedown="switchInstrument('instr2')">guitar</div>
 			<div id="instr3" class="instr hidden" onmousedown="switchInstrument('instr3')">v</div>
 		</div>

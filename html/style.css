@@ -31,6 +31,9 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+.selected {
+	background: #c90;
+}
 .selected:hover {
 	cursor: pointer;
 }
