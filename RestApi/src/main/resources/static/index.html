@@ -26,34 +26,15 @@
 		<h1 class="welcome">Welcome to RowdyKeys</h1>
 		<h2 class="welcome">Press the keys on the keyboard below to get sound!</h2>
 		<div class="keyboard">
-			<div class="whitekey" onclick="callJava(names[currentInst], 'C')"></div>
-			<div class="blackkey" onclick="callJava(names[currentInst], 'D')"></div>
-			<div class="whitekey" onclick="callJava(names[currentInst], 'E')"></div>
-			<div class="blackkey" onclick="callJava(names[currentInst], 'F')"></div>
-			<div class="whitekey" onclick="callJava(names[currentInst], 'G')"></div>
-			<div class="blackkey" onclick="callJava(names[currentInst], 'A')"></div>
-			<div class="whitekey" onclick="callJava(names[currentInst], 'B')"></div>
-			<div class="blackkey" onclick="callJava(names[currentInst], 'C2')"></div>
+			<div class="whitekey" id="keyA" onclick="callJava(names[currentInst], 'C')"></div>
+			<div class="blackkey" id="keyS" onclick="callJava(names[currentInst], 'D')"></div>
+			<div class="whitekey" id="keyD" onclick="callJava(names[currentInst], 'E')"></div>
+			<div class="blackkey" id="keyF" onclick="callJava(names[currentInst], 'F')"></div>
+			<div class="whitekey" id="keyG" onclick="callJava(names[currentInst], 'G')"></div>
+			<div class="blackkey" id="keyH" onclick="callJava(names[currentInst], 'A')"></div>
+			<div class="whitekey" id="keyJ" onclick="callJava(names[currentInst], 'B')"></div>
+			<div class="blackkey" id="keyK" onclick="callJava(names[currentInst], 'C2')"></div>
 		</div>
 	</div>
 </body>
-<script>
-    function callJava(instrument, note) {
-		//console.log(instrument, note);
-        const message = `${instrument}-${note}`;  // Format as "Instrument-Note"
-
-        fetch('/sendData', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message })  // Send single formatted string
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log(data); // Display response from API
-        })
-        .catch(error => console.error('Error:', error));
-    }
-</script>
 </html>
