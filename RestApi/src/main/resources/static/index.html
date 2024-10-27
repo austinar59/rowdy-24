@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="piano">
+        <div class="whitekey" onclick="callJava('synth', 'C')"></div>
+        <div class="blackkey" onclick="callJava('synth', 'D')"></div>
+        <div class="whitekey" onclick="callJava('synth', 'E')"></div>
+        <div class="blackkey" onclick="callJava('synth', 'F')"></div>
+        <div class="whitekey" onclick="callJava('synth', 'G')"></div>
+        <div class="blackkey" onclick="callJava('synth', 'A')"></div>
+        <div class="whitekey" onclick="callJava('synth', 'B')"></div>
+        <div class="blackkey" onclick="callJava('synth', 'C2')"></div>
+    </div>
+</body>
+<script>
+    function callJava(instrument, note) {
+        const message = `${instrument}-${note}`;  // Format as "Instrument-Note"
+
+        fetch('/sendData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message })  // Send single formatted string
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data); // Display response from API
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
+</html>
