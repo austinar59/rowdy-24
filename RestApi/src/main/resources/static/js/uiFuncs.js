@@ -5,16 +5,16 @@
 		var open = false;
 		document.addEventListener("keydown", keyPress);
 		var instrList = {
-			'instr1' : '🎹',
-			'instr2' : 'guitar',
-			'instr3' : 'v'
+			'instr1' : '🎛️',
+			'instr2' : '🎸',
+			'instr3' : '🎹'
 		}
 		var names = {
-			'🎹' : "synth",
-			'guitar' : 'pluck',
-			'v' : 'piano'
+			'🎛️' : "synth",
+			'🎸' : 'pluck',
+			'🎹' : 'piano'
 		}
-        var currentInst = '🎹';
+        var currentInst = '🎛️';
 		function keyPress(k) {
 			let keyDict = {
 				'A' : 'C',
