@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <script>
+	<script>
 		var open = false;
 		var instrList = {
-			'instr1' : '🎹';
-			'instr2' : 'guitar';
-			'instr3' : 'v';
+			'instr1' : '🎹',
+			'instr2' : 'guitar',
+			'instr3' : 'v'
 		}
         var currentInst = '🎹';
 		function switchInstrument(input)
@@ -22,16 +20,35 @@
 			currentInst = x;
 			instrList.instr1 = x;
 			instrList[input] = y;
+			document.getElementById("instr1").innerHtml = instrList[instr1];
+			document.getElementById(input).innerHtml = instrList[input];
+		}
+		function listChange(){
+			switch(open)
+			{
+				case true:
+					document.getElementById("instr2").className = "instr hidden";
+					document.getElementById("instr3").className = "instr hidden";
+					open = false;
+					break;
+				case false:
+					document.getElementById("instr2").className = "instr";
+					document.getElementById("instr3").className = "instr";
+					open = true;
+					break;
+			}
 		}
     </script>
+</head>
+<body>
 	<div id="header">
 		<div id="logo">
 			Placeholder
 		</div>
 		<div class="select">
-			<div id="instr1" class="instr selected">🎹</div>
-			<div id="instr2" class="instr hidden">guitar</div>
-			<div id="instr3" class="instr hidden">v</div>
+			<div id="instr1" class="instr selected" onmousedown="listChange()">🎹</div>
+			<div id="instr2" class="instr hidden" onmousedown="switchInstrument('instr2')">guitar</div>
+			<div id="instr3" class="instr hidden" onmousedown="switchInstrument('instr3')">v</div>
 		</div>
 	</div>
 	<div id="bodycontainer">
