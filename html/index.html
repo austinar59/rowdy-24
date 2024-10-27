@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 	<script>
 		const ZWSP_TXT = "<span class=\"zwsp\">&#8288;</span>";
-		const RIGHT_ARROW ='<div class="right-arrow"></div>';
+		const RIGHT_ARROW ='<div id="arrowLoc" class="right-arrow"></div>';
+		const LEFT_ARROW ='<div id="arrowLoc" class="right-arrow"></div>';
+		var currArrow = RIGHT_ARROW;
 		var open = false;
 		var instrList = {
 			'instr1' : '🎹',
@@ -27,7 +29,7 @@
 				currentInst = x;
 				instrList[instr1] = x;
 				instrList[input] = y;
-				document.getElementById("instr1").innerHTML = ZWSP_TXT + instrList[instr1] + RIGHT_ARROW;
+				document.getElementById("instr1").innerHTML = ZWSP_TXT + instrList[instr1] + currArrow;
 				document.getElementById(input).innerHTML = ZWSP_TXT + instrList[input];
 		}
 		function listChange(button){
@@ -37,13 +39,16 @@
 						document.getElementById("instr2").className = "instr hidden";
 						document.getElementById("instr3").className = "instr hidden";
 						open = false;
+						currArrow = RIGHT_ARROW;
 						break;
 					case false:
 						document.getElementById("instr2").className = "instr";
 						document.getElementById("instr3").className = "instr";
 						open = true;
+						currArrow = LEFT_ARROW;
 						break;
 				}
+				document.getElementById("arrowLoc").outerHTML = currArrow;
 		}
     </script>
 </head>
@@ -56,7 +61,7 @@
 			<div id="instr1" class="instr selected" onmousedown="listChange()">
 				<span class="zwsp">&#8288;</span>
 				🎹
-				<div class="right-arrow"></div>
+				<div id="arrowLoc" class="right-arrow"></div>
 			</div>
 			<div id="instr2" class="instr hidden" onmousedown="switchInstrument('instr2')"><span class="zwsp">&#8288;</span>guitar</div>
 			<div id="instr3" class="instr hidden" onmousedown="switchInstrument('instr3')"><span class="zwsp">&#8288;</span>v</div>
