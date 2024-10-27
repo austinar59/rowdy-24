@@ -90,10 +90,10 @@ body {
 	background: var(--grad-orange);
 }
 .whitekey:active {
-    background-color: #ea0;
+    background: #ea0;
 }
 .blackkey:active {
-    background-color: #f000;
+    background: #c40;
 }
 .zwsp {
 	/* this class allows for the amazing solution to emojis and texts being different line heights:
