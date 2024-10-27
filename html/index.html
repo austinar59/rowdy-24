@@ -18,10 +18,10 @@
 			let x = instrList[input];
 			let y = currentInst;
 			currentInst = x;
-			instrList.instr1 = x;
+			instrList[instr1] = x;
 			instrList[input] = y;
-			document.getElementById("instr1").innerHtml = instrList[instr1];
-			document.getElementById(input).innerHtml = instrList[input];
+			document.getElementById("instr1").innerHTML = instrList[instr1];
+			document.getElementById(input).innerHTML = instrList[input];
 		}
 		function listChange(){
 			switch(open)
