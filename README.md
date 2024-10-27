@@ -54,7 +54,7 @@ Frontend Interaction
 3. The server plays the audio clip and triggers the GUI to animate the corresponding note bar.
 
 # Contributors
-This project was created by Austin Roche, Roman Lopez, Sebastian Gongore,  and Jonathan Berndt over the course of around 24 hours for the RowdyHacks X competition on October 26-7, 2024.
+This project was created by Austin Roche, Roman Lopez, Sebastian Gongora,  and Jonathan Berndt over the course of around 24 hours for the RowdyHacks X competition on October 26-7, 2024.
 
 # Acknowledgements
 All rights are reserved to the property owners of Back to the Future, and thanks to the makers of SpringInitializr for speeding up the process of creating a SpringBoot server.
