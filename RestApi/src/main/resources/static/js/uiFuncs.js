@@ -35,7 +35,7 @@
 				'k' : 'C2'
 			}
 			let x = keyDict[k.key];
-			callJava(currentInst, x);
+			callJava(names[currentInst], x);
 		}
 		function switchInstrument(input, button)
 		{
