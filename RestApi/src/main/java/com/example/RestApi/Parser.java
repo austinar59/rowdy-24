@@ -13,7 +13,7 @@ public class Parser {
 
         for (int i = 0; i < strings.length(); i += 2) {
             String specFile = stringArr[1] + "_" + stringArr[0] + ".wav";
-            String filename = ("..\\..\\..\\..\\..\\resources\\rowdyKeys" + specFile);
+            String filename = ("..\\..\\..\\..\\..\\..\\resources\\rowdyKeys" + specFile);
             System.out.println("Playing: " + filename);
 
             PlayClip playClip = new PlayClip(filename);
