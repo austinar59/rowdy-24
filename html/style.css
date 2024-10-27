@@ -2,6 +2,11 @@ body {
 	margin: 0;
     font-family: Arial, sans-serif;
 }
+/* store our gradient values */
+:root {
+	--grad-gold: linear-gradient(#ea0, #c90);
+	--grad-orange: linear-gradient(#e60, #c40);
+}
 #bodycontainer {
     display: flex;
     justify-content: center;
@@ -17,7 +22,8 @@ body {
 }
 /* for instruments on the selection panel */
 .instr {
-	background: #c40;
+	background: var(--grad-orange);
+	background-color: #c40;
 }
 .hidden {
 	display: none;
@@ -37,7 +43,8 @@ body {
 	justify-content: center;
 }
 .instr.selected {
-	background: #c90;
+	background: var(--grad-gold);
+	background-color: #c90;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -58,6 +65,7 @@ body {
     width: 60px;
     height: 200px;
     margin: 2px;
+	background: var(--grad-gold);
     background-color: #c90;
     border: 1px solid #9af;
     display: flex;
@@ -71,7 +79,7 @@ body {
     width: 60px;
     height: 200px;
     margin: 2px;
-    background-color: #c40;
+    background-color: var(--grad-orange);
     border: 1px solid #9af;
     display: flex;
     justify-content: center;
@@ -79,6 +87,7 @@ body {
     cursor: pointer;
     font-weight: bold;
     font-size: 20px;
+	background: linear-gradient(#e60, #c40);
 }
 .whitekey:active {
     background-color: #ccc;
