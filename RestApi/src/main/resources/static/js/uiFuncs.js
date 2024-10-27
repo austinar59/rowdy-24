@@ -11,8 +11,8 @@
 		}
 		var names = {
 			'🎹' : "synth",
-			'guitar' : 'guitar',
-			'v' : 'v'
+			'guitar' : 'pluck',
+			'v' : 'piano'
 		}
         var currentInst = '🎹';
 		function keyPress(k) {
@@ -31,10 +31,11 @@
 				'h' : 'A',
 				'J' : 'B',
 				'j' : 'B',
-				'K' : 'C',
-				'k' : 'C'
+				'K' : 'C2',
+				'k' : 'C2'
 			}
 			let x = keyDict[k.key];
+			document.getElementById("key" + k.toUpperCase());
 			callJava(currentInst, x);
 		}
 		function switchInstrument(input, button)
