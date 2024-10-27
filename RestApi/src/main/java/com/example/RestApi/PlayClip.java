@@ -3,6 +3,7 @@ package com.example.RestApi;
 import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
+
 import java.net.URL;
 
 public class PlayClip implements Runnable {
@@ -30,7 +31,7 @@ public class PlayClip implements Runnable {
             audioClip.open(audioStream);
 
             audioClip.start();
-            Thread.sleep(audioClip.getMicrosecondLength() / 1000);
+            Thread.sleep(audioClip.getMicrosecondLength() / 50);
             audioClip.close();
             audioStream.close();
 
