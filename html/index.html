@@ -7,15 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script>
+        let currentInst = 'Piano';
+    </script>
     <div class="piano">
-        <div class="whitekey" onclick="callJava('Piano', '1')"></div>
-        <div class="blackkey" onclick="callJava('Piano', '2')"></div>
-        <div class="whitekey" onclick="callJava('Piano', '3')"></div>
-        <div class="blackkey" onclick="callJava('Piano', '4')"></div>
-        <div class="whitekey" onclick="callJava('Piano', '5')"></div>
-        <div class="blackkey" onclick="callJava('Piano', '6')"></div>
-        <div class="whitekey" onclick="callJava('Piano', '7')"></div>
-        <div class="blackkey" onclick="callJava('Piano', '8')"></div>
+        <div class="whitekey" onclick="callJava(currentInst, '1')"></div>
+        <div class="blackkey" onclick="callJava(currentInst, '2')"></div>
+        <div class="whitekey" onclick="callJava(currentInst, '3')"></div>
+        <div class="blackkey" onclick="callJava(currentInst, '4')"></div>
+        <div class="whitekey" onclick="callJava(currentInst, '5')"></div>
+        <div class="blackkey" onclick="callJava(currentInst, '6')"></div>
+        <div class="whitekey" onclick="callJava(currentInst, '7')"></div>
+        <div class="blackkey" onclick="callJava(currentInst, '8')"></div>
     </div>
 </body>
 <script>
