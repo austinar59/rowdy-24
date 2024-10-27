@@ -3,6 +3,7 @@
 		const LEFT_ARROW ='<div id="arrowLoc" class="left-arrow"></div>';
 		let currArrow = RIGHT_ARROW;
 		var open = false;
+		document.addEventListener("keydown", keyPress);
 		var instrList = {
 			'instr1' : '🎹',
 			'instr2' : 'guitar',
@@ -14,6 +15,28 @@
 			'v' : 'v'
 		}
         var currentInst = '🎹';
+		function keyPress(k) {
+			let keyDict = {
+				'A' : 'C',
+				'a' : 'C',
+				'S' : 'D',
+				's' : 'D',
+				'D' : 'E',
+				'd' : 'E',
+				'F' : 'F',
+				'f' : 'F',
+				'G' : 'G',
+				'g' : 'G',
+				'H' : 'A',
+				'h' : 'A',
+				'J' : 'B',
+				'j' : 'B',
+				'K' : 'C',
+				'k' : 'C'
+			}
+			let x = keyDict[k.key];
+			callJava(currentInst, x);
+		}
 		function switchInstrument(input, button)
 		{
 				let x = instrList[input];
@@ -42,3 +65,20 @@
 				}
 				document.getElementById("arrowLoc").outerHTML = currArrow;
 		}
+		function callJava(instrument, note) {
+		//console.log(instrument, note);
+        const message = `${instrument}-${note}`;  // Format as "Instrument-Note"
+
+        fetch('/sendData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message })  // Send single formatted string
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data); // Display response from API
+        })
+        .catch(error => console.error('Error:', error));
+    }

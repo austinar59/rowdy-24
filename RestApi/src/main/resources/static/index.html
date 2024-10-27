@@ -37,23 +37,4 @@
 		</div>
 	</div>
 </body>
-<script>
-    function callJava(instrument, note) {
-		//console.log(instrument, note);
-        const message = `${instrument}-${note}`;  // Format as "Instrument-Note"
-
-        fetch('/sendData', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message })  // Send single formatted string
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log(data); // Display response from API
-        })
-        .catch(error => console.error('Error:', error));
-    }
-</script>
 </html>
