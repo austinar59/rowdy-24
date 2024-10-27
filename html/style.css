@@ -37,7 +37,7 @@ body {
 .instr.selected {
 	background: #c90;
 }
-.selected:hover {
+.select:hover {
 	cursor: pointer;
 }
 .keyboard {
@@ -47,8 +47,8 @@ body {
     width: 60px;
     height: 200px;
     margin: 2px;
-    background-color: #fff;
-    border: 1px solid #000;
+    background-color: #c90;
+    border: 1px solid #9af;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -60,8 +60,8 @@ body {
     width: 60px;
     height: 200px;
     margin: 2px;
-    background-color: black;
-    border: 1px solid #000;
+    background-color: #c40;
+    border: 1px solid #9af;
     display: flex;
     justify-content: center;
     align-items: flex-end;
