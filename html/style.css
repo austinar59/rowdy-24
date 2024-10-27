@@ -1,12 +1,37 @@
 body {
+	margin: 0;
+    font-family: Arial, sans-serif;
+}
+#bodycontainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 95vh;
     margin: 0;
     font-family: Arial, sans-serif;
 }
-.piano {
+.instr, #logo {
+	height: 100%;
+	font-size: 16pt;
+	padding: 25px;
+}
+.hidden {
+	display: none;
+}
+#header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: white;
+	min-height: 5vh;
+	background: #000;
+}
+.select {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.keyboard {
     display: flex;
 }
 .whitekey {

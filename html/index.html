@@ -8,18 +8,44 @@
 </head>
 <body>
     <script>
-        let currentInst = 'Piano';
+		var open = false;
+		var instrList = {
+			'instr1' : '🎹';
+			'instr2' : 'guitar';
+			'instr3' : 'v';
+		}
+        var currentInst = '🎹';
+		function switchInstrument(input)
+		{
+			let x = instrList[input];
+			let y = currentInst;
+			currentInst = x;
+			instrList.instr1 = x;
+			instrList[input] = y;
+		}
     </script>
-    <div class="piano">
-        <div class="whitekey" onclick="callJava(currentInst, '1')"></div>
-        <div class="blackkey" onclick="callJava(currentInst, '2')"></div>
-        <div class="whitekey" onclick="callJava(currentInst, '3')"></div>
-        <div class="blackkey" onclick="callJava(currentInst, '4')"></div>
-        <div class="whitekey" onclick="callJava(currentInst, '5')"></div>
-        <div class="blackkey" onclick="callJava(currentInst, '6')"></div>
-        <div class="whitekey" onclick="callJava(currentInst, '7')"></div>
-        <div class="blackkey" onclick="callJava(currentInst, '8')"></div>
-    </div>
+	<div id="header">
+		<div id="logo">
+			Placeholder
+		</div>
+		<div class="select">
+			<div id="instr1" class="instr selected">🎹</div>
+			<div id="instr2" class="instr hidden">guitar</div>
+			<div id="instr3" class="instr hidden">v</div>
+		</div>
+	</div>
+	<div id="bodycontainer">
+		<div class="keyboard">
+			<div class="whitekey" onclick="callJava(currentInst, '1')"></div>
+			<div class="blackkey" onclick="callJava(currentInst, '2')"></div>
+			<div class="whitekey" onclick="callJava(currentInst, '3')"></div>
+			<div class="blackkey" onclick="callJava(currentInst, '4')"></div>
+			<div class="whitekey" onclick="callJava(currentInst, '5')"></div>
+			<div class="blackkey" onclick="callJava(currentInst, '6')"></div>
+			<div class="whitekey" onclick="callJava(currentInst, '7')"></div>
+			<div class="blackkey" onclick="callJava(currentInst, '8')"></div>
+		</div>
+	</div>
 </body>
 <script>
     function callJava(instrument, note) {
