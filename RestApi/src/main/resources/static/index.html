@@ -5,18 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+	<script src="../js/uiFuncs.js">
+    </script>
 </head>
 <body>
-    <div class="piano">
-        <div class="whitekey" onclick="callJava('synth', 'C')"></div>
-        <div class="blackkey" onclick="callJava('synth', 'D')"></div>
-        <div class="whitekey" onclick="callJava('synth', 'E')"></div>
-        <div class="blackkey" onclick="callJava('synth', 'F')"></div>
-        <div class="whitekey" onclick="callJava('synth', 'G')"></div>
-        <div class="blackkey" onclick="callJava('synth', 'A')"></div>
-        <div class="whitekey" onclick="callJava('synth', 'B')"></div>
-        <div class="blackkey" onclick="callJava('synth', 'C2')"></div>
-    </div>
+	<div id="header">
+		<div id="logo">
+			RowdyHacks
+		</div>
+		<div class="select">
+			<div id="instr1" class="instr selected" onmousedown="listChange()">
+				<span class="zwsp">&#8288;</span>
+				🎹
+				<div id="arrowLoc" class="right-arrow"></div>
+			</div>
+			<div id="instr2" class="instr hidden" onmousedown="switchInstrument('instr2')"><span class="zwsp">&#8288;</span>guitar</div>
+			<div id="instr3" class="instr hidden" onmousedown="switchInstrument('instr3')"><span class="zwsp">&#8288;</span>v</div>
+		</div>
+	</div>
+	<div id="bodycontainer">
+		<div class="keyboard">
+			<div class="whitekey" onclick="callJava(names['currentInst'], 'C')"></div>
+			<div class="blackkey" onclick="callJava(names['currentInst'], 'D')"></div>
+			<div class="whitekey" onclick="callJava(names['currentInst'], 'E')"></div>
+			<div class="blackkey" onclick="callJava(names['currentInst'], 'F')"></div>
+			<div class="whitekey" onclick="callJava(names['currentInst'], 'G')"></div>
+			<div class="blackkey" onclick="callJava(names['currentInst'], 'A')"></div>
+			<div class="whitekey" onclick="callJava(names['currentInst'], 'B')"></div>
+			<div class="blackkey" onclick="callJava(names['currentInst'], 'C2')"></div>
+		</div>
+	</div>
 </body>
 <script>
     function callJava(instrument, note) {
