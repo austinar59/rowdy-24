@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 	<script>
+		const ZWSP_TXT = "<span class=\"zwsp\">&#8288;</span>";
 		var open = false;
 		var instrList = {
 			'instr1' : '🎹',
@@ -20,8 +21,8 @@
 				currentInst = x;
 				instrList[instr1] = x;
 				instrList[input] = y;
-				document.getElementById("instr1").innerHTML = instrList[instr1];
-				document.getElementById(input).innerHTML = instrList[input];
+				document.getElementById("instr1").innerHTML = ZWSP_TXT + instrList[instr1];
+				document.getElementById(input).innerHTML = ZWSP_TXT + instrList[input];
 		}
 		function listChange(button){
 				switch(open)
