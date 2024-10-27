@@ -52,3 +52,9 @@ Frontend Interaction
 1. Open index.html in a browser to access the web interface.
 2. Select a note on the virtual piano, and it sends a POST request to /sendData on the server.
 3. The server plays the audio clip and triggers the GUI to animate the corresponding note bar.
+
+# Contributors
+This project was created by Austin Roche, Roman Lopez, Sebastian Gongore,  and Jonathan Berndt over the course of around 24 hours for the RowdyHacks X competition on October 26-7, 2024.
+
+# Acknowledgements
+All rights are reserved to the property owners of Back to the Future, and thanks to the makers of SpringInitializr for speeding up the process of creating a SpringBoot server.
